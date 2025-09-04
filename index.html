@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamVerse - Engineering a Borderless Future for Live Content</title>
+    <meta name="description" content="StreamVerse is a pioneering SaaS platform designed to dismantle language barriers in real-time, transforming the landscape of live streaming for a truly global era.">
+    <meta name="keywords" content="live streaming, translation, AI voiceover, SaaS, global audience, content creator, Twitch, YouTube">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@next/dist/aos.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0A0A0A;
+            color: #E2E8F0;
+        }
+        .hero-gradient {
+            background: radial-gradient(circle at 50% 30%, rgba(59, 130, 246, 0.15) 0%, rgba(10, 10, 10, 0) 60%);
+        }
+        .section-gradient {
+            background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, rgba(10, 10, 10, 0) 50%);
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(59, 130, 246, 0.5);
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {transform: scale(1.05);
+        }
+        .roadmap-item::before {
+            content: '';
+            position: absolute;
+            left: 12px;
+            top: 12px;
+            bottom: 0;
+            width: 2px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .roadmap-item:last-child::before {
+            display: none;
+        }
+        .roadmap-dot {
+            position: absolute;
+            left: 0;
+            top: 4px;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #0A0A0A;
+            border: 2px solid rgba(59, 130, 246, 0.8);
+        }
+        .roadmap-dot-inner {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #3B82F6;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-black/30 backdrop-blur-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center space-x-2">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500"><path d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.53L19.5 9L12 13.47L4.5 9L12 4.53ZM3 8.33V15.67L11 20.33V12.67L3 8.33ZM13 12.67V20.33L21 15.67V8.33L13 12.67Z" fill="currentColor"/></svg>
+                <h1 class="text-2xl font-bold text-white">StreamVerse</h1>
+            </a>
+            <nav class="hidden md:flex items-center space-x-8">
+                <a href="#mission" class="text-slate-300 hover:text-white transition">Mission</a>
+                <a href="#how-it-works" class="text-slate-300 hover:text-white transition">How It Works</a>
+                <a href="#team" class="text-slate-300 hover:text-white transition">Team</a>
+                <a href="#roadmap" class="text-slate-300 hover:text-white transition">Roadmap</a>
+            </nav>
+            <a href="#cta" class="hidden md:inline-block bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg shadow-lg hover:bg-blue-700 cta-button">Get Early Access</a>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <i data-lucide="menu"></i>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+             <a href="#mission" class="block py-2 text-slate-300 hover:text-white transition">Mission</a>
+             <a href="#how-it-works" class="block py-2 text-slate-300 hover:text-white transition">How It Works</a>
+             <a href="#team" class="block py-2 text-slate-300 hover:text-white transition">Team</a>
+             <a href="#roadmap" class="block py-2 text-slate-300 hover:text-white transition">Roadmap</a>
+             <a href="#cta" class="block mt-4 bg-blue-600 text-white font-semibold px-5 py-2 rounded-lg text-center hover:bg-blue-700">Get Early Access</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="min-h-screen pt-32 pb-16 flex items-center justify-center hero-gradient" data-aos="fade-in">
+            <div class="container mx-auto px-6 text-center">
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight mb-4" data-aos="fade-up">
+                    Engineering a <span class="text-blue-500">Borderless Future</span> for Live Content</h1>
+                <p class="text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
+                    A streamer in Delhi may have fans in Dallas, a gamer in Tokyo may have a community waiting in Berlin. StreamVerse dismantles the language barriers that keep them apart.
+                </p>
+                <div class="flex justify-center space-x-4" data-aos="fade-up" data-aos-delay="200">
+                    <a href="#cta" class="bg-blue-600 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-blue-700 cta-button">Join the Waitlist</a>
+                    <a href="#how-it-works" class="bg-slate-700 text-white font-bold px-8 py-4 rounded-lg shadow-lg hover:bg-slate-600 cta-button">Learn More</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission Section -->
+        <section id="mission" class="py-20 section-gradient">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                <h2 class="text-sm font-bold uppercase text-blue-500 mb-2">Our Core Mission</h2>
+                <p class="text-3xl md:text-4xl font-bold text-white mb-6 max-w-4xl mx-auto">One Stream, Every Voice</p>
+                <p class="text-lg text-slate-400 max-w-4xl mx-auto mb-12">
+                    Our mission is elegantly simple yet technologically ambitious: to empower any content creator to broadcast a single live stream that can be heard and understood by anyone, anywhere, in their native language.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="100">
+                        <i data-lucide="globe-2" class="w-12 h-12 text-blue-500 mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Unified Global Community</h3>
+                        <p class="text-slate-400">Cultivate a worldwide audience without the logistical nightmare of managing separate streams or the prohibitive cost of human interpreters.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="200">
+                        <i data-lucide="bot" class="w-12 h-12 text-blue-500 mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Authentic AI Voice</h3>
+                        <p class="text-slate-400">Our cutting-edge voice generation AI creates authentic, engaging voiceovers, ensuring your personality and emotion are not lost in translation.</p>
+                    </div>
+                    <div class="feature-card p-8 rounded-xl" data-aos="fade-up" data-aos-delay="300">
+                        <i data-lucide="share-2" class="w-12 h-12 text-blue-500 mx-auto mb-4"></i>
+                        <h3 class="text-xl font-bold text-white mb-2">Multi-Platform Sync</h3>
+                        <p class="text-slate-400">Translated audio tracks are synced with your video and broadcast simultaneously to platforms like YouTube and Twitch on different language channels.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How It Works Section -->
+        <section id="how-it-works" class="py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-sm font-bold uppercase text-blue-500 mb-2">The Technology of Connection</h2>
+                    <p class="text-3xl md:text-4xl font-bold text-white">Go Global in Three Simple Steps</p>
+                </div>
+                <div class="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16">
+                    <!-- Step 1 -->
+                    <div class="flex items-center flex-col text-center" data-aos="fade-right">
+                         <div class="bg-blue-900/50 border-2 border-blue-600 rounded-full w-24 h-24 flex items-center justify-center mb-4">
+                            <i data-lucide="link" class="w-12 h-12 text-blue-400"></i>
+                         </div>
+                         <h3 class="text-2xl font-bold text-white mb-2">1. Connect</h3>
+                         <p class="text-slate-400 max-w-xs">Securely link your streaming software and platform accounts (YouTube, Twitch, etc.) to the StreamVerse dashboard.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="flex items-center flex-col text-center" data-aos="fade-up" data-aos-delay="150">
+                        <div class="bg-blue-900/50 border-2 border-blue-600 rounded-full w-24 h-24 flex items-center justify-center mb-4">
+                            <i data-lucide="languages" class="w-12 h-12 text-blue-400"></i>
+                         </div>
+                         <h3 class="text-2xl font-bold text-white mb-2">2. Select</h3>
+                         <p class="text-slate-400 max-w-xs">Choose a portfolio of target languages for your broadcast from our extensive and ever-growing library.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="flex items-center flex-col text-center" data-aos="fade-left" data-aos-delay="300">
+                        <div class="bg-blue-900/50 border-2 border-blue-600 rounded-full w-24 h-24 flex items-center justify-center mb-4">
+                            <i data-lucide="radio-tower" class="w-12 h-12 text-blue-400"></i>
+                         </div>
+                         <h3 class="text-2xl font-bold text-white mb-2">3. Go Live</h3>
+                         <p class="text-slate-400 max-w-xs">Begin your stream as you normally would. StreamVerse's engine takes over, processing and broadcasting in real-time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The Team Section -->
+        <section id="team" class="py-20 section-gradient">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <div class="lg:flex lg:items-center lg:gap-16">
+                    <div class="lg:w-1/2" data-aos="fade-right">
+                        <h2 class="text-sm font-bold uppercase text-blue-500 mb-2">The Architects</h2>
+                        <p class="text-3xl md:text-4xl font-bold text-white mb-4">A Team Fueled by Passion</p>
+                        <p class="text-slate-400 mb-6 text-lg">
+                            StreamVerse is not the product of a large corporation but of a nimble, dedicated team of ten university students in India. As avid consumers of global content and aspiring technologists, they have a firsthand understanding of the problem they are solving.
+                        </p>
+                        <p class="text-slate-400 text-lg">
+                           Their shared vision is to build a tool that democratizes global reach, giving creators from any background the power to connect with a worldwide audience. This unique position as both builders and members of the target audience gives them invaluable insight into creating a product that is not only powerful but also intuitive and creator-centric.
+                        </p>
+                    </div>
+                    <div class="lg:w-1/2 mt-10 lg:mt-0" data-aos="fade-left" data-aos-delay="200">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+         <!-- Roadmap Section -->
+        <section id="roadmap" class="py-20">
+            <div class="container mx-auto px-6" data-aos="fade-up">
+                <div class="text-center mb-16">
+                    <h2 class="text-sm font-bold uppercase text-blue-500 mb-2">The Road Ahead</h2>
+                    <p class="text-3xl md:text-4xl font-bold text-white">A Vision for a Connected World</p>
+                </div>
+                <div class="max-w-2xl mx-auto">
+                    <div class="relative">
+                        <!-- Item 1 -->
+                        <div class="roadmap-item pl-12 pb-12" data-aos="fade-up">
+                            <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+                            <h4 class="text-xl font-bold text-white mb-2">Platform Launch</h4>
+                            <p class="text-slate-400">The initial launch of the StreamVerse platform will be just the beginning, with core features ready to connect creators to the world.</p>
+                        </div>
+                        <!-- Item 2 -->
+                        <div class="roadmap-item pl-12 pb-12" data-aos="fade-up" data-aos-delay="100">
+                             <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+                            <h4 class="text-xl font-bold text-white mb-2">Language & Voice Expansion</h4>
+                            <p class="text-slate-400">Our roadmap includes aggressively expanding the library of available languages and voices to reach every corner of the globe.</p>
+                        </div>
+                        <!-- Item 3 -->
+                        <div class="roadmap-item pl-12 pb-12" data-aos="fade-up" data-aos-delay="200">
+                            <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+                            <h4 class="text-xl font-bold text-white mb-2">Deeper Analytics</h4>
+                            <p class="text-slate-400">We plan to offer deeper analytics to show creators exactly where their new audiences are coming from, providing invaluable insights.</p>
+                        </div>
+                        <!-- Item 4 -->
+                        <div class="roadmap-item pl-12" data-aos="fade-up" data-aos-delay="300">
+                             <div class="roadmap-dot"><div class="roadmap-dot-inner"></div></div>
+                            <h4 class="text-xl font-bold text-white mb-2">More Platform Integrations</h4>
+                            <p class="text-slate-400">Our ultimate vision is to become the essential, invisible bridge by integrating with more streaming platforms and creator tools.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section id="cta" class="py-20 section-gradient">
+            <div class="container mx-auto px-6 text-center" data-aos="fade-up">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">The World is Waiting To Hear You</h2>
+                 <p class="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+                    Become a pioneer of borderless content. Sign up for early access and be the first to take your stream truly global with our universal translator.
+                 </p>
+                 <form class="max-w-md mx-auto flex flex-col sm:flex-row gap-4">
+                     <input type="email" placeholder="Enter your email" class="w-full px-4 py-3 rounded-lg bg-slate-800 border border-slate-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                     <button type="submit" class="bg-blue-600 text-white font-bold px-6 py-3 rounded-lg shadow-lg hover:bg-blue-700 cta-button flex-shrink-0">Request Early Access</button>
+                 </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900/50">
+        <div class="container mx-auto px-6 py-8">
+            <div class="sm:flex sm:justify-between items-center text-center sm:text-left">
+                <div class="mb-4 sm:mb-0">
+                     <div class="flex items-center justify-center sm:justify-start space-x-2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="text-blue-500"><path d="M12 2L2 7V17L12 22L22 17V7L12 2ZM12 4.53L19.5 9L12 13.47L4.5 9L12 4.53ZM3 8.33V15.67L11 20.33V12.67L3 8.33ZM13 12.67V20.33L21 15.67V8.33L13 12.67Z" fill="currentColor"/></svg>
+                        <h1 class="text-xl font-bold text-white">StreamVerse</h1>
+                    </div>
+                    <p class="text-slate-400 mt-2 text-sm">© 2025 StreamVerse. Engineering a Borderless Future.</p>
+                </div>
+                <div class="flex flex-col items-center sm:items-end">
+                     <div class="flex justify-center space-x-6 mb-3">
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="youtube"></i></a>
+                        <a href="#" class="text-slate-400 hover:text-white"><i data-lucide="linkedin"></i></a>
+                    </div>
+                    <a href="mailto:contact@streamverse.liveblog365.com" class="text-slate-400 text-sm hover:text-white">contact@streamverse.liveblog365.com</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      lucide.createIcons();
+
+        // Mobile Menu Toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = mobileMenuButton.querySelector('i');
+
+        mobileMenuButton.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            if (isHidden) {
+                menuIcon.setAttribute('data-lucide', 'menu');
+            } else {
+                menuIcon.setAttribute('data-lucide', 'x');
+            }
+            lucide.createIcons();
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                if (this.getAttribute('href') === '#') return;
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                    menuIcon.setAttribute('data-lucide', 'menu');
+                    lucide.createIcons();
+                }
+            });
+        });
+
+        // Animation on Scroll
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 50,
+        });
+
+    </script>
+</body>
+</html>
